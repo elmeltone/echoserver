@@ -3,9 +3,12 @@ var express = require('express');
 var app = express();
 
 app.get('/', function(request, response) {
-  response.json({
-
-  })
+  response.send('hello world');
 });
 
-app.listen();
+app.get('/headers', function(request, response) {
+  var echo = request.headers;
+  response.send(echo).json;
+});
+
+app.listen(8080);
