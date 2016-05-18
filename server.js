@@ -2,10 +2,10 @@ var express = require('express');
 
 var app = express();
 
-app.get('/', function(request, response) {
+app.get('/headers', function(request, response) {
   response.json({
-
+    request.headers;
   })
 });
 
-app.listen();
+app.listen(8080);
