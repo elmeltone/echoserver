@@ -11,4 +11,14 @@ app.get('/headers', function(request, response) {
   response.send(echo).json;
 });
 
+app.get('/headers/:header_name', function(request, response) {
+  var headerName = request.headers[request.params.header_name];
+  response.send(headerName);
+});
+
+app.get('/version', function(request, response) {
+  var version = request.httpVersion;
+  response.send(version);
+});
+
 app.listen(8080);
